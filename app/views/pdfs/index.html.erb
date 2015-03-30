@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Your Loans:</h1>
+<a href="/users/sign_out">Sign-Out</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>|First name|</th>
+      <th>Last name|</th>
+      <th>Loan ammount|</th>
+      <th>Down payment|</th>
+      <th>Intrest rate|</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pdfs.each do |pdf| %>
+      <tr>
+        <td><%= pdf.first_name %></td>
+        <td><%= pdf.last_name %></td>
+        <td><%= pdf.loan_ammount %></td>
+        <td><%= pdf.down_payment %></td>
+        <td><%= pdf.intrest_rate %></td>
+        <td><%= link_to 'Show', pdf %></td>
+        <td><%= link_to 'Edit', edit_pdf_path(pdf) %></td>
+        <td><%= link_to 'Destroy', pdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Loan', new_pdf_path %>

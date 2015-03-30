@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  loan_ammount: 1
+  down_payment: 1
+  intrest_rate: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  loan_ammount: 1
+  down_payment: 1
+  intrest_rate: 1
