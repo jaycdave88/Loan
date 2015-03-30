@@ -26,4 +26,6 @@
 </p>
 
 <%= link_to 'Edit', edit_pdf_path(@pdf) %> |
+<%= link_to "Printable Invoice (PDF)", pdf_path(@pdfs, :format => 'pdf') %>
 <%= link_to 'Back', pdfs_path %>
+
