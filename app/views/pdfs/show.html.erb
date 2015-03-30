@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @pdf.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @pdf.last_name %>
+</p>
+
+<p>
+  <strong>Loan ammount:</strong>
+  <%= @pdf.loan_ammount %>
+</p>
+
+<p>
+  <strong>Down payment:</strong>
+  <%= @pdf.down_payment %>
+</p>
+
+<p>
+  <strong>Intrest rate:</strong>
+  <%= @pdf.intrest_rate %>
+</p>
+
+<%= link_to 'Edit', edit_pdf_path(@pdf) %> |
+<%= link_to 'Back', pdfs_path %>
