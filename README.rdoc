@@ -1,0 +1,36 @@
+== README
+
+collect data and sometimes this data populates a pdf document 
+ 
+== User Stories
+- A user can sign in / if perviously signed up
+- A user can sign up 
+- A user can logout 
+- A user can create a pdf 
+- more to come....
+
+== Notes:
+- create a site allows a user to sign up or login a existing account 
+- 1 page on that page is the index
+- pdf documents 
+- produced by the site 
+- index site should be a new document button 
+- A modal should open asking for:
+-Name,
+-down payment, 
+-intrest rate
+
+... hits submit should create a new .pdf with the following info perviously providied.
+
+==PDF Example:
+
+-Loan ammount: [ammount_here_from_modal]
+-Down payment: [ammount_here_from_modal]
+-Intrest rate: [ammount_here_from_modal]
+ 
+-rails 4.2 gems:
+-login -> devise 
+-file uploader -> paperclip 
+-pdf -> prawn 
+-database -> postgres
+-CSS -> bootstrap 3.2
