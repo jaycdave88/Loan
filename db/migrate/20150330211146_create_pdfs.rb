@@ -5,7 +5,7 @@ class CreatePdfs < ActiveRecord::Migration
       t.string :last_name
       t.integer :loan_ammount
       t.integer :down_payment
-      t.integer :intrest_rate
+      t.string :intrest_rate
 
       t.timestamps null: false
     end
