@@ -24,6 +24,7 @@
         <td><%= pdf.loan_ammount %></td>
         <td><%= pdf.down_payment %></td>
         <td><%= pdf.intrest_rate %></td>
+        <td><%= image_tag pdf.photo.url(:thumb) %></td>
         <td><%= link_to 'Show', pdf %></td>
         <td><%= link_to 'Edit', edit_pdf_path(pdf) %></td>
         <td><%= link_to 'Destroy', pdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,4 +35,5 @@
 
 <br>
 
-<%= link_to 'New Loan', new_pdf_path %>
+<%= link_to 'New Loan', new_pdf_path %> |
+

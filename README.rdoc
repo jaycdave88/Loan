@@ -27,8 +27,9 @@ collect data and sometimes this data populates a pdf document
 -Loan ammount: [ammount_here_from_modal]
 -Down payment: [ammount_here_from_modal]
 -Intrest rate: [ammount_here_from_modal]
- 
--rails 4.2 gems:
+
+==Use these gems
+-rails 4.2 gems
 -login -> devise 
 -file uploader -> paperclip 
 -pdf -> prawn 

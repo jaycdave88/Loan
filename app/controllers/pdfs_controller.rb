@@ -10,12 +10,6 @@ class PdfsController < ApplicationController
   # GET /pdfs/1
   # GET /pdfs/1.json
   def show
-    @pdf = Pdf.find(params[:id])
-    respond_to do |format|
-    format.html # show.html.erb
-    format.xml  { render :xml => @pdf }
-    format.pdf { render :layout => false } # Add this line
-    end
   end
 
   # GET /pdfs/new
@@ -75,6 +69,6 @@ class PdfsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pdf_params
-      params.require(:pdf).permit(:first_name, :last_name, :loan_ammount, :down_payment, :intrest_rate)
+      params.require(:pdf).permit(:photo, :first_name, :last_name, :loan_ammount, :down_payment, :intrest_rate)
     end
   end
