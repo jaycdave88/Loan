@@ -10,7 +10,7 @@ Web application that will create a .pdf with the provided information from the u
 - A user can upload a picture
 - More to come....
 ---
-== Notes:
+=== Notes:
 - Create a site allows a user to sign up or login a existing account 
 - 1 page on that page is the index
 - .pdf documents 
@@ -25,16 +25,16 @@ Web application that will create a .pdf with the provided information from the u
 (hits submit should create a new .pdf )
 ---
 ===PDF Example:
-
--Loan amount: [amount_here_from_modal]
--Down payment: [amount_here_from_modal]
--Interest rate: [amount_here_from_modal]
-
-===Use these gems
--Rails 4.2 gems
--Login -> devise 
--File up loader -> paperclip 
--.pdf -> prawn 
--Database -> postgres
--CSS -> bootstrap 3.2
+- Loan name:
+- Loan amount:
+- Down payment: 
+- Interest rate:
+- Notes: 
+---
+===Rails 4.2 gems to use:
+- Login -> devise 
+- File up loader -> paperclip 
+- .pdf -> prawn 
+- Database -> postgres
+- CSS -> bootstrap 3.2
 
