@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <p style="font-size:24px">Loan Info:</p>
+</p>
+
+<p>
   <strong>First name:</strong>
   <%= @pdf.first_name %>
 </p>
@@ -26,6 +30,6 @@
 </p>
 
 <%= link_to 'Edit', edit_pdf_path(@pdf) %> |
-<%= link_to "Printable Invoice (PDF)", pdf_path(@pdfs, :format => 'pdf') %>
-<%= link_to 'Back', pdfs_path %>
+<%= link_to 'Back', pdfs_path %> |
+<%= link_to "Printable Invoice (PDF)", pdf_path("#{@pdf.id}.pdf") %>
 
