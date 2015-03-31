@@ -1,37 +1,40 @@
 == README
 
-collect data and sometimes this data populates a pdf document 
- 
-== User Stories
-- A user can sign in / if perviously signed up
+Web application that will create a .pdf with the provided information from the user.
+
+=== User Stories
+- A user can sign in / if previously signed up
 - A user can sign up 
 - A user can logout 
-- A user can create a pdf 
-- more to come....
-
+- A user can create a .pdf 
+- A user can upload a picture
+- More to come....
+---
 == Notes:
-- create a site allows a user to sign up or login a existing account 
+- Create a site allows a user to sign up or login a existing account 
 - 1 page on that page is the index
-- pdf documents 
-- produced by the site 
-- index site should be a new document button 
+- .pdf documents 
+- Produced by the site 
+- Index site should be a new document button 
+---
 - A modal should open asking for:
--Name,
--down payment, 
--intrest rate
+- Name of Loan,
+- Loan Amount,
+- Down payment, 
+- Interest rate
+(hits submit should create a new .pdf )
+---
+===PDF Example:
 
-... hits submit should create a new .pdf with the following info perviously providied.
+-Loan amount: [amount_here_from_modal]
+-Down payment: [amount_here_from_modal]
+-Interest rate: [amount_here_from_modal]
 
-==PDF Example:
-
--Loan ammount: [ammount_here_from_modal]
--Down payment: [ammount_here_from_modal]
--Intrest rate: [ammount_here_from_modal]
-
-==Use these gems
--rails 4.2 gems
--login -> devise 
--file uploader -> paperclip 
--pdf -> prawn 
--database -> postgres
+===Use these gems
+-Rails 4.2 gems
+-Login -> devise 
+-File up loader -> paperclip 
+-.pdf -> prawn 
+-Database -> postgres
 -CSS -> bootstrap 3.2
+
