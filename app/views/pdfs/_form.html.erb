@@ -1,3 +1,4 @@
+
 <%= form_for @pdf, html: { multipart: true } do |f| %>
   <% if @pdf.errors.any? %>
     <div id="error_explanation">
@@ -38,4 +39,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+

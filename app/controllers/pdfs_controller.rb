@@ -3,9 +3,11 @@ class PdfsController < ApplicationController
   before_action :authenticate_user!
   # GET /pdfs
   # GET /pdfs.json
+
   def index
     @pdfs = Pdf.all
   end
+
 
   # GET /pdfs/1
   # GET /pdfs/1.json
@@ -15,6 +17,10 @@ class PdfsController < ApplicationController
   # GET /pdfs/new
   def new
     @pdf = Pdf.new
+    respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js
+      end
   end
 
   # GET /pdfs/1/edit
