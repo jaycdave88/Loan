@@ -1,6 +1,8 @@
 class PdfsController < ApplicationController
   before_action :set_pdf, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  
+
   # GET /pdfs
   # GET /pdfs.json
 

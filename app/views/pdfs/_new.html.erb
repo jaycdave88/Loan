@@ -1,14 +1,53 @@
-    <div class="modal-dialog">
-    	<div class="modal-content">
-    		<div class="modal-header">
-    			<h4 class="modal-title" id="myModalLabel">New Loan</h4>
-    		</div>
-    		<div class="modal-body">
-    			<h3>Modal jay</h3>
-    		</div>
-    		<div class="modal-footer">
-    			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    			<button type="button" class="btn btn-primary">Save changes</button>
-    		</div>
-    	</div>
+<div class="modal-dialog">
+ <div class="modal-content">
+    <div class="modal-header">
+     <h4 class="modal-title" id="myModalLabel">Create</h4>
+   </div>
+   <div class="modal-body">
+     <h3>New Loan Data:</h3>
+     <%= form_for @pdf, html: { multipart: true } do |f| %>
+     <% if @pdf.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(@pdf.errors.count, "error") %> prohibited this pdf from being saved:</h2>
+
+        <ul>
+            <% @pdf.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :photo %><br>
+        <%= f.file_field :photo %>
+      </div>
+      <div class="field">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </div>
+      <div class="field">
+        <%= f.label :loan_ammount %><br>
+        <%= f.number_field :loan_ammount %>
+      </div>
+      <div class="field">
+        <%= f.label :down_payment %><br>
+        <%= f.number_field :down_payment %>
+      </div>
+      <div class="field">
+        <%= f.label :intrest_rate %><br>
+        <%= f.text_field :intrest_rate %>
+      </div>
+    <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     <%= f.submit 'Save loan', class: 'btn-save' %>
+     <% end %>
     </div>
+  </div>
+  </div>
+</div>
+
