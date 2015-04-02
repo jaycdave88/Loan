@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Your Loans:</h1>
-<p><a href="/users/sign_out">Sign-Out</a>
 
 <table>
   <thead>
@@ -35,5 +34,18 @@
 
 <br>
 
-<%= link_to 'New Loan', new_pdf_path %> |
+<!-- link_to 'New Loan', new_pdf_path  %> -->
+
+<!-- Not working code .... -->
+
+<%= link_to 'Add release', "pdfs/new",  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#basicModal'}  %>
+
+<div id="basicModal" class="modal hide fade" role="dialog" aria-labelledby="basicModal" aria-hidden="true"></div>
+
+
+
+
+
+
+
 

@@ -19,6 +19,15 @@ gem 'prawn'
 gem 'prawnto'
 gem "paperclip", "~> 4.2"
 
+
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+
+gem 'bootstrap-modal-rails'
+
+
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
