@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331182736) do
+ActiveRecord::Schema.define(version: 20150403025925) do
 
   create_table "pdfs", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.integer  "loan_ammount"
     t.integer  "down_payment"
     t.string   "intrest_rate"
+    t.string   "notes"
+    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "photo_file_name"

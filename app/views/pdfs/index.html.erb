@@ -1,15 +1,19 @@
 <p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+  <div>Welcome <%= current_user.email %></div>
+<% end %>
 
 <h1>Listing Your Loans:</h1>
+
 
 <table>
   <thead>
     <tr>
-      <th>|First name|</th>
-      <th>Last name|</th>
-      <th>Loan ammount|</th>
-      <th>Down payment|</th>
-      <th>Intrest rate|</th>
+      <th>| Name |</th>
+      <th>Loan amount |</th>
+      <th>Down payment |</th>
+      <th>Interest rate |</th>
+      <th>Notes |</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +22,15 @@
   <tbody>
     <% @pdfs.each do |pdf| %>
       <tr>
-        <td><%= pdf.first_name %></td>
-        <td><%= pdf.last_name %></td>
+        <td><%= pdf.name %></td>
         <td><%= pdf.loan_ammount %></td>
         <td><%= pdf.down_payment %></td>
         <td><%= pdf.intrest_rate %></td>
+        <td><%= pdf.notes %></td>
         <td><%= image_tag pdf.photo.url(:thumb) %></td>
-        <td><%= link_to 'Show', pdf %></td>
+        <td><%= link_to 'View', pdf %></td>
         <td><%= link_to 'Edit', edit_pdf_path(pdf) %></td>
-        <td><%= link_to 'Destroy', pdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', pdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

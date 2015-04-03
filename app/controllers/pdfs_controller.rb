@@ -7,22 +7,27 @@ class PdfsController < ApplicationController
   # GET /pdfs.json
 
   def index
-    @pdfs = Pdf.all
+    @user = current_user if current_user
+    @pdfs = current_user.pdfs 
   end
-
 
   # GET /pdfs/1
   # GET /pdfs/1.json
   def show
+    if current_user.id == @pdf.user_id
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /pdfs/new
   def new
     @pdf = Pdf.new
     respond_to do |format|
-        format.html {redirect_to root_path}
-        format.js
-      end
+      format.html {redirect_to root_path}
+      format.js
+    end
   end
 
   # GET /pdfs/1/edit
@@ -31,17 +36,16 @@ class PdfsController < ApplicationController
 
   # POST /pdfs
   # POST /pdfs.json
+  
   def create
     @pdf = Pdf.new(pdf_params)
-
-    respond_to do |format|
-      if @pdf.save
-        format.html { redirect_to @pdf, notice: 'Pdf was successfully created.' }
-        format.json { render :show, status: :created, location: @pdf }
-      else
-        format.html { render :new }
-        format.json { render json: @pdf.errors, status: :unprocessable_entity }
-      end
+    LoanMailer.registration_confirmation(current_user).deliver_now
+    @pdf.user_id = current_user.id if current_user
+    if @pdf.save
+      flash[:notice] = "Loan created successfully"
+      redirect_to pdfs_path
+    else
+      render :new
     end
   end
 
@@ -50,7 +54,7 @@ class PdfsController < ApplicationController
   def update
     respond_to do |format|
       if @pdf.update(pdf_params)
-        format.html { redirect_to @pdf, notice: 'Pdf was successfully updated.' }
+        format.html { redirect_to @pdf, notice: 'Loan was successfully updated.' }
         format.json { render :show, status: :ok, location: @pdf }
       else
         format.html { render :edit }
@@ -64,7 +68,7 @@ class PdfsController < ApplicationController
   def destroy
     @pdf.destroy
     respond_to do |format|
-      format.html { redirect_to pdfs_url, notice: 'Pdf was successfully destroyed.' }
+      format.html { redirect_to pdfs_url, notice: 'Loan was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,6 +81,6 @@ class PdfsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pdf_params
-      params.require(:pdf).permit(:photo, :first_name, :last_name, :loan_ammount, :down_payment, :intrest_rate)
+      params.require(:pdf).permit(:photo, :name, :notes, :loan_ammount, :down_payment, :intrest_rate)
     end
   end
