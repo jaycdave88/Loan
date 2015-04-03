@@ -76,15 +76,13 @@ config.i18n.fallbacks = true
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['roostify'],
-      :access_key_id => ENV['AKIAIQQ537J2OALVPNAA
-        '],
-        :secret_access_key => ENV['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
-          ']
-        }
-      }
-    end
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
+
+end
