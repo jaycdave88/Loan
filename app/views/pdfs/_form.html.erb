@@ -17,12 +17,8 @@
   <%= f.file_field :photo %>
 </div>
 <div class="field">
-  <%= f.label :first_name %><br>
-  <%= f.text_field :first_name %>
-</div>
-<div class="field">
-  <%= f.label :last_name %><br>
-  <%= f.text_field :last_name %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
 </div>
 <div class="field">
   <%= f.label :loan_ammount %><br>
@@ -35,6 +31,10 @@
 <div class="field">
   <%= f.label :intrest_rate %><br>
   <%= f.text_field :intrest_rate %>
+</div>
+<div class="field">
+  <%= f.label :notes %><br>
+  <%= f.text_field :notes %>
 </div>
 <div class="actions">
   <%= f.submit %>
