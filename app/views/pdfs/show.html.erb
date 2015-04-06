@@ -6,13 +6,8 @@
 </p>
 
 <p>
-  <strong>First name:</strong>
+  <strong>Name:</strong>
   <%= @pdf.name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @pdf.notes %>
 </p>
 
 <p>
@@ -26,8 +21,13 @@
 </p>
 
 <p>
-  <strong>Intrest rate:</strong>
+  <strong>Interest rate:</strong>
   <%= @pdf.intrest_rate %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @pdf.notes %>
 </p>
 
 <%= link_to 'Edit', edit_pdf_path(@pdf) %> |
