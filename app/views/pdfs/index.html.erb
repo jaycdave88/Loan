@@ -1,52 +1,45 @@
-<p id="notice"><%= notice %></p>
 <% if user_signed_in? %>
-  <div>Welcome <%= current_user.email %></div>
+<div>Welcome <%= current_user.email %></div>
 <% end %>
 
 <h1>Listing Your Loans:</h1>
 
-
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>| Name |</th>
-      <th>Loan amount |</th>
-      <th>Down payment |</th>
-      <th>Interest rate |</th>
-      <th>Notes |</th>
-      <th colspan="3"></th>
+      <th> Name </th>
+      <th> Loan amount </th>
+      <th> Down payment </th>
+      <th> Interest rate </th>
+      <th> Notes </th>
     </tr>
   </thead>
 
-
   <tbody>
     <% @pdfs.each do |pdf| %>
-      <tr>
-        <td><%= pdf.name %></td>
-        <td><%= pdf.loan_ammount %></td>
-        <td><%= pdf.down_payment %></td>
-        <td><%= pdf.intrest_rate %></td>
-        <td><%= pdf.notes %></td>
-        <td><%= image_tag pdf.photo.url(:thumb) %></td>
+    <tr>
+      <td><%= pdf.name %></td>
+      <td><%= number_to_currency(pdf.loan_ammount) %></td>
+      <td><%= number_to_currency(pdf.down_payment) %></td>
+      <td><%= pdf.intrest_rate %></td>
+      <td><%= pdf.notes %></td>
+
+      <td><% if pdf.photo.exists? %>
+        <%= image_tag pdf.photo.url(:thumb) %>
+        <%end%></td>
         <td><%= link_to 'View', pdf %></td>
         <td><%= link_to 'Edit', edit_pdf_path(pdf) %></td>
         <td><%= link_to 'Delete', pdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+    <button type="button" class="btn btn-default">
+      <%= link_to 'New Loan', "pdfs/new",  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#basicModal'}  %>
+    </button>
 
-<!-- link_to 'New Loan', new_pdf_path  %> -->
-
-<!-- Not working code .... -->
-
-<button type="button" class="btn btn-default">
-<%= link_to 'New Loan', "pdfs/new",  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#basicModal'}  %></button>
-
-<div id="basicModal" class="modal fade" role="dialog" aria-labelledby="basicModal" aria-hidden="true"></div>
-
+    <div id="basicModal" class="modal fade" role="dialog" aria-labelledby="basicModal" aria-hidden="true"></div>
 
 
 
